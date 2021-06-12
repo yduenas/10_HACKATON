@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<meta
+			name="YFDM"
+			content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+		/>
+		<title>HACKATON 10</title>
+		<!-- fontawesome CDN -->
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+			crossorigin="anonymous"
+		/>
+		<link href="./css/prism-dark.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="collapse bg-dark" id="navbarHeader">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-8 col-md-7 py-4">
+							<h4 class="text-white">HACKATON 10</h4>
+							<p class="text-muted">
+								Este es un examen del diplomado FRONT-END en IDAT, llamado
+								"HACKATON".
+							</p>
+						</div>
+						<div class="col-sm-4 offset-md-1 py-4">
+							<h4 class="text-white">Links de referencia</h4>
+							<ul class="list-unstyled">
+								<li><a href="readme.md" class="text-white">Readme</a></li>
+								<li><a href="index.html" class="text-white">Index</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbar navbar-dark bg-dark shadow-sm">
+				<div class="container">
+					<a href="readme.md" class="navbar-brand d-flex align-items-center">
+						<i class="far fa-bookmark"></i>
+						<strong> Ir al README</strong>
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarHeader"
+						aria-controls="navbarHeader"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="py-5 text-center container Container-Uno">
+				<div class="row py-lg-5">
+					<div class="col-lg-6 col-md-8 mx-auto">
+						<h1 class="fw-light">HACKATON 10</h1>
+						<p class="lead text-muted">
+							Este es un examen del diplomado FRONT-END en IDAT, llamado
+							"HACKATON", la cual se encuentra en su version 10
+						</p>
+						<p>
+							<a href="readme.md" class="btn btn-primary my-2">Ir al Readme</a>
+
+							<a href="./js/main.js" class="btn btn-secondary my-2"
+								>Ir al JavaScript</a
+							>
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1">
+						<!--INICIO-->
+						<!-- EJERCICIO 1-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 1</h5>
+									<p class="card-text">
+										1.- Utilizando función arrow, crear una función que reciba
+										como parámetros un nombre, apellido y edad y los retorne en
+										un string concatenado “Hola mi nombre es sebastián yabiku y
+										mi edad 33”.
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	let datosPersonales2 = () => {
+		let nombre = prompt('Ingrese el nombre: ');
+		let apellido = prompt('Ingrese el Apellido: ');
+		let edad = prompt('Ingrese la Edad: ');
+		let resultado = `Hola mi nombre es ${nombre} ${apellido} y mi edad es ${edad}.`;
+
+		/* Crear elementos */
+		const etiqueta = document.createElement('p');
+		// Llenar elemento
+		etiqueta.textContent = resultado;
+		// Setear atributo (opcional)
+		// Pintarlo en el DOM
+		const contenedor = document.getElementById('contenedor1');
+		contenedor.appendChild(etiqueta);
+	};
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="datosPersonales2();">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor1"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 1-->
+						<!-- EJERCICIO 2-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 2</h5>
+									<p class="card-text">
+										2.-Cree una función que tome números y devuelva la suma de
+										sus cubos. <br />
+										sumOfCubes(1, 5, 9) ➞ 855 <br />
+										Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function sumOfCubes(...rest) {
+		let suma = 0;
+		for (i = 0; i < rest.length; i++) {
+			suma = suma + Math.pow(rest[i], 3);
+		}
+		return suma;
+	}
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="sumOfCubes();">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor2"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 2-->
+						<!-- EJERCICIO 3-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 3</h5>
+									<p class="card-text">
+										3.-Crear una funcion que me retorne el tipo de valor
+										entregado, invocar la función para los distintos tipos de js
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function tipoValor(valor) {
+		console.log(typeof valor);
+	}
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="tipoValor()">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor3"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 3-->
+						<!-- EJERCICIO 4-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 4</h5>
+									<p class="card-text">
+										4.-Crear una función que reciba n cantidad de argumentos y
+										los sume ( utilizar parametros rest)
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function sumaArgumentos(...rest) {
+		let suma = 0;
+		for (i = 0; i < rest.length; i++) {
+			suma = suma + rest[i];
+		}
+		return suma;
+	}
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="sumaArgumentos()">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor4"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 4-->
+						<!-- EJERCICIO 5-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 5</h5>
+									<p class="card-text">
+										Crear una función que reciba un array de valores y filtre
+										los valores que no son string
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	const words = [
+	'spray',
+	'limit',
+	'elite',
+	'exuberant',
+	'destruction',
+	'present',
+	1,
+	2,
+	3,
+];
+
+const idEliminar = '*';
+const nuevoArreglo = words.filter((valor) => valor >= idEliminar);
+console.log(nuevoArreglo);
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor5"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 5-->
+						<!-- EJERCICIO 6-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 6</h5>
+									<p class="card-text">
+										6.-Cree una función que tome una matriz de números y
+										devuelva los números mínimos y máximos, en ese orden.
+										<br />>minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	const arrNumeros = [1, 2, 3, 4, 5];
+	let ArrMax = Math.max.apply(Math, arrNumeros);
+	let ArrMin = Math.min.apply(Math, arrNumeros);
+	console.log(ArrMax);
+	console.log(ArrMin);
+	const nuevoArregloNumeros = arrNumeros.filter(
+		(valor) => valor == ArrMin || valor == ArrMax
+	);
+	console.log(nuevoArregloNumeros);
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor6"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 6-->
+						<!-- EJERCICIO 7-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 7</h5>
+									<p class="card-text">
+										Escriba una función que tome una matriz de 10 enteros (entre
+										0 y 9) y devuelva una cadena en forma de un número de
+										teléfono.
+										<br />formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞
+										"(123) 456-7890"
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	const arrNumeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+	function formatPhoneNumber(arrNumeros2) {
+		let cadena = '';
+		for (let i = 0; i <= 9; i++) {
+			if (i == 0) {
+				cadena += '(';
+			}
+			if (i == 3) {
+				cadena += ') ';
+			}
+			if (i == 6) {
+				cadena += '-';
+			}
+			cadena += arrNumeros2[i];
+		}
+		console.log(cadena);
+	}
+	formatPhoneNumber(arrNumeros2);
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="formatPhoneNumber()">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor7"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 7-->
+						<!-- EJERCICIO 8-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 8</h5>
+									<p class="card-text">
+										8.-Cree una función que tome una matriz de matrices con
+										números. Devuelve una nueva matriz (única) con el mayor
+										número de cada uno.
+										<br />>findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1,
+										2, 0]]) ➞ [7, 90, 2]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	const array8 = [
+	[4, 2, 7, 1],
+	[20, 70, 40, 90],
+	[1, 2, 0],
+];
+function findLargestNums(arrays) {
+	let nuevo = [];
+	for (let i = 0; i <= array8.length - 1; i++) {
+		//	nuevo.push(Math.max.apply(Math, arrays[i]));
+		nuevo.push(Math.max.apply(Math, arrays[i]));
+	}
+	return console.log(nuevo);
+	//console.log(nuevo);
+}
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor8"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 8-->
+						<!-- EJERCICIO 9-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 9</h5>
+									<p class="card-text">
+										9.-Dada una palabra, escriba una función que devuelva el
+										primer índice y el último índice de un carácter.
+										<br />>charIndex("hello", "l") ➞ [2, 3] <br />
+										The first "l" has index 2, the last "l" has index 3.
+										<br />charIndex("circumlocution", "c") ➞ [0, 8] <br />
+										The first "c" has index 0, the last "c" has index 8.
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function charIndex(valor, caracter) {
+		primero = valor.indexOf(caracter);
+		ultimo = valor.lastIndexOf(caracter);
+		return console.log(
+			`The first ${caracter} has index ${primero}, the last ${caracter} has index ${ultimo}`
+		);
+	}
+	charIndex('hello', 'l');
+	charIndex('circumlocution', 'c');
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="charIndex()">
+										ejecutar
+									</button>
+									<p>Resultado:</p>
+									<div id="contenedor9"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 9-->
+						<!-- EJERCICIO 10-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 10</h5>
+									<p class="card-text">
+										10.-Escriba una función que convierta un objeto en una
+										matriz, donde cada elemento representa un par clave-valor.
+										<br />toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function toArray(objeto) {
+		let arregloDeClavesYValores = Object.entries(objeto);
+		return console.log(arregloDeClavesYValores);
+	}
+	toArray({ a: 1, b: 2 });
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor10"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 10-->
+						<!-- EJERCICIO 11-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 11</h5>
+
+									<p class="card-text">
+										11.-Cree la función que toma una matriz con objetos y
+										devuelve la suma de los presupuestos de las personas.
+										<code>
+											<pre>
+	getBudgets([ { name: "John", age: 21, budget: 23000 }, {
+	name: "Steve", age: 32, budget: 40000 }, { name: "Martin",
+	age: 16, budget: 2700 } ]) ➞ 65700
+</pre
+											>
+										</code>
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	arrBudgets = [
+	{ name: 'John', age: 21, budget: 23000 },
+	{ name: 'Steve', age: 32, budget: 40000 },
+	{ name: 'Martin', age: 16, budget: 2700 },
+];
+function getBudgets(objeto) {
+	let suma = 0;
+	for (i = 0; i < objeto.length; i++) {
+		suma = suma + objeto[i].budget;
+	}
+	return suma;
+}
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor11"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 11-->
+						<!-- EJERCICIO 12-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 12</h5>
+									<p class="card-text">
+										12.-Cree una función que tome una matriz de estudiantes y
+										devuelva una matriz de nombres de estudiantes.
+										<code>
+											<pre>
+getStudentNames([
+  { name: "Steve" },
+  { name: "Mike" },
+  { name: "John" }
+]) ➞ ["Becky", "John", "Steve"]
+</pre
+											>
+										</code>
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	let arrStudentNames = [{ name: 'Steve' }, { name: 'Mike' }, { name: 'John' }];
+	function getStudentNames(array) {
+		let nuevo = [];
+		for (let i = 0; i <= array.length - 1; i++) {
+			nuevo.push(array[i].name);
+		}
+		return nuevo;
+	}
+	console.log(getStudentNames(arrStudentNames));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor12"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 12-->
+						<!-- EJERCICIO 13-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 13</h5>
+									<p class="card-text">
+										13.-Escriba una función que convierta un objeto en una
+										matriz de claves y valores.
+										<code>
+											<pre>
+objectToArray({
+  likes: 2,
+  dislikes: 3,
+  followers: 10
+}) ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+</pre
+											>
+										</code>
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function objectToArray(objeto) {
+		let arregloDeClavesYValores = Object.entries(objeto);
+		return console.log(arregloDeClavesYValores);
+	}
+	objectToArray({
+		likes: 2,
+		dislikes: 3,
+		followers: 10,
+	});
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor13"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 13-->
+						<!-- EJERCICIO 14-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 14</h5>
+									<p class="card-text">
+										14.-Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados  incluyendo n.
+										<code>
+											<pre>
+squaresSum(3) ➞ 14
+ 1² + 2² + 3² =
+ 1 + 4 + 9 =
+ 14
+											</code>
+										</pre>
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function squaresSum(valor) {
+		let suma = 0;
+		for (i = 1; i <= valor; i++) {
+			suma = suma + Math.pow(i, 2);
+		}
+		return suma;
+	}
+	console.log(squaresSum(3));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="squaresSum()">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor14"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 14-->
+						<!-- EJERCICIO 15-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 15</h5>
+									<p class="card-text">15.-Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada
+										<br>>multiplyByLength([2, 3, 1, 0]) ➞ [8, 12, 4, 0]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function multiplyByLength(array) {
+		let largo = array.length;
+		let nuevo = [];
+		for (let i = 0; i <= array.length - 1; i++) {
+			nuevo.push(array[i] * largo);
+		}
+		return nuevo;
+	}
+	console.log(multiplyByLength([2, 3, 1, 0]));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor15"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 15-->
+						<!-- EJERCICIO 16-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 16</h5>
+									<p class="card-text">16.-Cree una función que tome un número como argumento y devuelva una matriz de números contando desde este número a cero.
+										<br>>countdown(5) ➞ [5, 4, 3, 2, 1, 0]</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function countdown(numero) {
+		let nuevo = [];
+		for (let i = numero; i >= 0; i--) {
+			nuevo.push(i);
+		}
+		return nuevo;
+	}
+	console.log(countdown(5));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="countdown()">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor16"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 16-->
+						<!-- EJERCICIO 17-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 17</h5>
+									<p class="card-text">
+										17.-Cree una función que tome una matriz y devuelva la diferencia entre los números más grandes y más pequeños.
+<br>	diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
+<br> Smallest number is -50, biggest is 32.
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function diffMaxMin(arrNumeros) {
+		let ArrMax = Math.max.apply(Math, arrNumeros);
+		let ArrMin = Math.min.apply(Math, arrNumeros);
+		return ArrMin - ArrMax;
+	}
+	console.log(diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor17"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 17-->
+						<!-- EJERCICIO 18-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 18</h5>
+									<p class="card-text">
+										18.-Cree una función que filtre las cadenas de una matriz y devuelva una nueva matriz que solo contenga enteros.
+<br>filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function filterList(array) {
+		let nuevo = [];
+		for (let i = 0; i < array.length; i++) {
+			if (!isNaN(array[i])) {
+				nuevo.push(array[i]);
+			}
+		}
+		return console.log(nuevo);
+	}
+	filterList([1, 2, 3, 'x', 'y', 10]);
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor18"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 18-->
+						<!-- EJERCICIO 19-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 19</h5>
+									<p class="card-text">
+										19.-Cree una función que tome dos argumentos (elemento, tiempos). El primer argumento (elemento)
+<br>es el elemento que necesita repetirse, mientras que el segundo argumento (veces) es la cantidad
+<br>de veces que se debe repetir el elemento. Devuelve el resultado en una matriz.
+<br>repeat(13, 5) ➞ [13, 13, 13, 13, 13]
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function repeat(elemento, tiempos) {
+		let nuevo = [];
+		for (let i = 0; i < tiempos; i++) {
+			nuevo.push(elemento);
+		}
+		return console.log(nuevo);
+	}
+	repeat(13, 5);
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="repeat()">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor19"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 19-->
+						<!-- EJERCICIO 20-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 20</h5>
+									<p class="card-text">20.-Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas
+										<br>las vocales en una cadena con una vocal especificada.
+										<br>"apples and bananas".vreplace("u") ➞ "upplus und bununus"</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function vreplace(cadena, vocal) {
+		return console.log(cadena.replace(/[aeiou]/gi, vocal));
+	}
+	console.log('EJERCICIO 20');
+	vreplace('apples and bananas', 'e');
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="vreplace() ">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor20"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 20-->
+						<!-- EJERCICIO 21-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 21</h5>
+									<p class="card-text">
+										21.-Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena
+<br>como esta: "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+<br>findNemo("I am finding Nemo !") ➞ "I found Nemo at 13!"
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function findNemo(cadena, palabra) {
+		resultado = cadena.indexOf(palabra);
+		return console.log(resultado);
+	}
+	console.log('EJERCICIO 21');
+	findNemo('I am finding Nemo !', 'Nemo');
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="findNemo() ">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor21"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 21-->
+						<!-- EJERCICIO 22-->
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									<h5 class="card-title">Ejercicio 22</h5>
+									<p class="card-text">
+										22.-Cree una función que capitalice la última letra de cada palabra.
+<br>capLast("hello") ➞ "hellO"
+									</p>
+									<div
+										class="d-flex justify-content-between align-items-center"
+									>
+										<pre class="language-javascript line-numbers">
+<code>
+	function capLast(string) {
+		let arr = string.split(' ');
+		let farr = arr.map((item) => {
+			let x = item.split('');
+			let len = x.length - 1;
+			x[len] = x[len].toUpperCase();
+			x = x.join('');
+			return x;
+		});
+		return farr.join(' ');
+	}
+	console.log(capLast('hello hello'));
+</code>
+										</pre>
+									</div>
+									<button class="btn btn-primary" onclick="capLast() ">ejecutar</button>
+									<p>Resultado:</p>
+									<div id="contenedor22"></div>
+								</div>
+							</div>
+						</div>
+						<!-- EJERCICIO 22-->
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="text-muted py-5">
+			<div class="container">
+				<p class="float-end mb-1">
+					<a href="readme.md">Regresar al README</a>
+				</p>
+				<p class="mb-1">Examen HACKATON &copy; IDAT, 2021.</p>
+			</div>
+		</footer>
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+			crossorigin="anonymous"
+		></script>
+		<script src="./js/prism.js"></script>
+		<!--
+		<script src="./js/main.js"></script>
+		-->
+		<script src="./js/main2.js"></script>
+	</body>
+</html>
